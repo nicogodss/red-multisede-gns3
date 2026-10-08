@@ -31,6 +31,6 @@ El servidor Alpine está en la VLAN 30 de Bogotá, con dirección `192.168.42.2`
 - Traducciones NAT observadas para tráfico de Bogotá y Medellín hacia `1.1.1.1:443`.
 - Carga y descarga FTP con usuario autenticado desde Alpine; acceso TCP al puerto 21 verificado desde Medellín.
 
-## Archivo del laboratorio
+## Requisitos para recrear el laboratorio
 
-El repositorio incluye la exportación portable del proyecto de GNS3. Para abrirlo se requieren GNS3 y las imágenes de dispositivos correspondientes; estas imágenes no forman parte de la exportación.
+Este repositorio documenta el diseño y las pruebas del laboratorio. No incluye el disco de Alpine ni imágenes binarias de Cisco IOS; se requieren GNS3 y las imágenes de dispositivos obtenidas por separado para recrear la topología.
