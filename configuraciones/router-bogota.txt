@@ -1,0 +1,55 @@
+interface FastEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/0.10
+ encapsulation dot1Q 10
+ ip address 192.168.40.1 255.255.255.0
+ ip helper-address 192.168.42.2
+ ip nat inside
+ ip virtual-reassembly
+!
+interface FastEthernet0/0.20
+ encapsulation dot1Q 20
+ ip address 192.168.41.1 255.255.255.0
+ ip helper-address 192.168.42.2
+ ip nat inside
+ ip virtual-reassembly
+!
+interface FastEthernet0/0.30
+ encapsulation dot1Q 30
+ ip address 192.168.42.1 255.255.255.0
+ ip nat inside
+ ip virtual-reassembly
+
+interface FastEthernet0/1
+ ip address 192.168.43.253 255.255.255.252
+ ip nat inside
+ ip virtual-reassembly
+ duplex auto
+ speed auto
+
+router ospf 1
+ log-adjacency-changes
+ network 192.168.40.0 0.0.0.255 area 0
+ network 192.168.41.0 0.0.0.255 area 0
+ network 192.168.42.0 0.0.0.255 area 0
+ network 192.168.43.252 0.0.0.3 area 0
+ default-information originate
+
+ip nat inside source list NAT-INSIDE interface Vlan99 overload
+
+ip access-list standard NAT-INSIDE
+ permit 192.168.40.0 0.0.0.255
+ permit 192.168.41.0 0.0.0.255
+ permit 192.168.42.0 0.0.0.255
+ permit 192.168.43.0 0.0.0.127
+ permit 192.168.43.128 0.0.0.63
+
+interface Vlan99
+ ip address dhcp
+ ip nat outside
+ ip virtual-reassembly
+
+! Ruta por defecto aprendida por DHCP en Vlan99: 0.0.0.0/0 via 192.168.122.1
