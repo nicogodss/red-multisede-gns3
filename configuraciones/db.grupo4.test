@@ -1,0 +1,16 @@
+$TTL 86400
+@ IN SOA ns1.grupo4.test. admin.grupo4.test. (
+  2026100801
+  3600
+  900
+  604800
+  86400
+)
+@        IN NS ns1.grupo4.test.
+ns1      IN A  192.168.42.2
+dns      IN A  192.168.42.2
+dhcp     IN A  192.168.42.2
+ftp      IN A  192.168.42.2
+sistemas IN A  192.168.42.2
+bogota   IN A  192.168.43.253
+medellin IN A  192.168.43.254
