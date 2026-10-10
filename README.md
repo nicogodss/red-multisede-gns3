@@ -34,3 +34,13 @@ El servidor Alpine está en la VLAN 30 de Bogotá, con dirección `192.168.42.2`
 ## Requisitos para recrear el laboratorio
 
 Este repositorio documenta el diseño y las pruebas del laboratorio. No incluye el disco de Alpine ni imágenes binarias de Cisco IOS; se requieren GNS3 y las imágenes de dispositivos obtenidas por separado para recrear la topología.
+
+## Configuraciones
+
+- [DHCP](configuraciones/dhcpd.conf)
+- [DNS: configuración](configuraciones/named.conf)
+- [DNS: zona `grupo4.test`](configuraciones/db.grupo4.test)
+- [FTP](configuraciones/vsftpd.conf)
+- [Router Bogotá](configuraciones/router-bogota.txt)
+- [Router Medellín](configuraciones/router-medellin.txt)
+- [VLAN y puertos de switches](configuraciones/switches-bogota.md)
