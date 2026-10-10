@@ -44,3 +44,9 @@ Este repositorio documenta el diseño y las pruebas del laboratorio. No incluye 
 - [Router Bogotá](configuraciones/router-bogota.txt)
 - [Router Medellín](configuraciones/router-medellin.txt)
 - [VLAN y puertos de switches](configuraciones/switches-bogota.md)
+
+## Evidencias del proyecto
+
+[Ver todas las capturas](evidencias/)
+
+![Topología completa](evidencias/26_topologia_gns3_completa.png)
